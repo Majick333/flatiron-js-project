@@ -19,6 +19,7 @@ function renderMessages(json) {
     json.forEach(message => {
         const conversation = document.createElement('div');
         let message_iid = message.id
+        let packet = {message, message_iid};
 
         conversation.innerHTML = 
         
@@ -28,7 +29,7 @@ function renderMessages(json) {
         ${message.content}<br>
             <form>
                 <strong> Reply to this Message </strong><br>
-                <button onclick = "addComment(${message_iid})"> Add Comment </button>
+                <button onclick = "showComments(${packet})"> View </button>
             </form>       <br>
         </div>
         `

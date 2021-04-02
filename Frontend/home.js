@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchMessages();
-    newMessage();
-    fetchComments();
-    commentForm();
 })
 
 

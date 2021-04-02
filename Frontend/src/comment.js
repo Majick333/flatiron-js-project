@@ -3,44 +3,23 @@ class Comment {
         this.username = username;
         this.content = content;
         this.message_id = message_id;
+        }     
     }
 
-    
-     
-    }
- //const titleLink = document.getElementsByClassName("link")
-
- function renderComments(json) {
-    let commentCard = document.getElementById("comments")
-    
-    commentCard.innerHTML='';
-    
-    json.forEach(comment => {
-       // debugger;
-        let reply = document.createElement('div');
-        reply.innerHTML = 
-
-            `<h1>${comment.message_id}</h1>
-            <p>${comment.content}</p> <br>
-            <h4>${comment.username}</h4>
-            <br>
-            
-
-            `
-            commentCard.appendChild(reply);
-        })
-
-    }
-
-
-//need to fetch and filter by message_id 
-//and add below their messages
+let commentArray = [];
+// //need to fetch and filter by message_id 
+// //and add below their messages
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
-    .then(json => renderComments(json));
+    .then(json => renderComments(json))
+    console.log("comment-array", commentArray)
 }
 
+function renderComments(json) {
+    commentArray.push(json)
+    console.log(commentArray)
+}
 
 
 function addComment(message_iid){
