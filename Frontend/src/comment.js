@@ -45,8 +45,8 @@ function fetchComments() {
 
 function addComment(message_iid){
     console.log("addcomment", message_iid)
-    alert('like this')
-    debugger;
+    //alert('like this')
+    //debugger;
     let commentUsername = document.getElementById('comment-username').value
     let commentContent = document.getElementById('reply').value
 
