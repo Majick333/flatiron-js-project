@@ -60,7 +60,7 @@ main {
     display: flex;
     background: white;
     min-height: 60vh;
-    width: 100%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,10 +73,24 @@ main {
 }
 
 #information-display {
+    border-radius: 1rem;
+    padding: 1%;
     display: flex;
     flex: 3;
+    width: 60%;
     background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0,255,106, 0.1));
     min-height: 60%;    
+}
+
+.detailed-view {
+    z-index: 3;
+    width: 60%;
+    display: flex;
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0,255,106, 0.1));
+    min-height: 60%;  
+    border: 1px solid black; 
+    border-radius: 2rem;
+    padding: 3%;
 }
 
 .shape,
@@ -117,8 +131,8 @@ main {
     height: 24rem;
     width: 24rem;
     position: absolute;
-    top: 30%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
     z-index: 2;
 
 }

@@ -19,7 +19,7 @@ function renderMessages(json) {
     json.forEach(message => {
         const conversation = document.createElement('div');
         let message_iid = message.id
-        //let content = document.getElementById('reply').value
+
         conversation.innerHTML = 
         
         `<div class= "message-card">
@@ -38,14 +38,6 @@ function renderMessages(json) {
         messageCard.appendChild(conversation);
     })
     
-
-        // `
-        // <h2> <div class="link"> <a href src = '${BASE_URL}/messages/${this.id}/comments'> ${this.title} </h2> </a> </div> <br>
-        //  <h3> ${this.username} </h3> <br>
-        //   <h4> ${this.content}<br>
-        //     ${this.id}
-        //   </h4>       
-        // ` 
        
     } 
 
@@ -55,24 +47,6 @@ function fetchMessages(){
     .then(resp => resp.json())
     .then(json => renderMessages(json));
 }
-
-// function fetchMessages() 
-//     fetch(`${BASE_URL}/messages`)
-//         .then(resp => resp.json())
-//         .then(messages => {
-//             console.log("messages", messages)
-//             for (const message of messages) {
-//                 let newMessage = new Message(message.username, message.content, message.title, message.category)
-//                 newMessage.renderMessage();
-//                 //console.log("test", newMessage)
-//             }
-
-//         })
-
-
-// }
-
-//post new message
 
 function newMessage() {
     let messageForm = document.getElementById('message-form');
@@ -106,8 +80,6 @@ function newMessage() {
             content: messageContent
         }
 
-        //console.log(content)
-
         fetch(`${BASE_URL}/messages`, {
             method: "POST",
             headers: {
@@ -120,9 +92,3 @@ function newMessage() {
 
 
 }
-
-
-// ${message.comments.map((comment) => {
-//     return `${comment.username} <br>
-//         ${comment.content}`
-// })}
