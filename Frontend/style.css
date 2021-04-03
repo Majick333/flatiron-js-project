@@ -58,18 +58,15 @@ main {
 
 .translucent {
     display: flex;
+    flex: 1;
     background: white;
-    min-height: 60vh;
+    height: 70%;
     width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right bottom, rgba(0, 255, 106, 0.6), rgba(255, 255, 255, 0.1));
+    background: linear-gradient(to right bottom, rgba(15, 84, 87, 0.6), rgba(27, 230, 245, 0.1));
     border-radius: 3rem;
     z-index: 3;
     backdrop-filter: blur(1rem);
-    flex-direction: row;
-    overflow: scroll;
+    padding: 3%;
 }
 
 #information-display {
@@ -146,11 +143,11 @@ main {
 }
 
 .messages {
+    padding: 2%;
     display: flex;
     flex: 1;
     flex-basis: 20%;
     background: linear-gradient(to right bottom, rgba(252, 255, 253, 0.6), rgba(143, 227, 241, 0.1));
-    align-items: center;
     min-height: 55vh;
     border-radius: 2rem;
     padding: 0rem 2rem;

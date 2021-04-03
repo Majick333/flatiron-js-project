@@ -18,8 +18,9 @@ function renderMessages(json) {
     messageCard.innerHTML = '';
     json.forEach(message => {
         const conversation = document.createElement('div');
-        let message_iid = message.id
-        let packet = {message, message_iid};
+        let message_iid = message.id ;
+        let messageTitle = message.title ;
+        let messageContent = message.content ;
 
         conversation.innerHTML = 
         
@@ -29,12 +30,11 @@ function renderMessages(json) {
         ${message.content}<br>
             <form>
                 <strong> Reply to this Message </strong><br>
-                <button onclick = "showComments(${packet})"> View </button>
+                <button onclick = "showComments(${message_iid})"> View </button>
             </form>       <br>
         </div>
         `
-        fetchComments(message_iid);
-        console.log('fetching comments for message:',message_iid)
+
         
         messageCard.appendChild(conversation);
     })

@@ -13,14 +13,14 @@ function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
     .then(json => renderComments(json))
-    console.log("comment-array", commentArray)
+    //commentArray.push(json)
 }
 
 function renderComments(json) {
     commentArray.push(json)
-    console.log(commentArray)
 }
 
+console.log(commentArray)
 
 function addComment(message_iid){
     console.log("addcomment", message_iid)
@@ -48,3 +48,27 @@ function addComment(message_iid){
 
 }
 
+//triggered by clicking view button 
+function showComments(message_iid){
+    debugger;
+    console.log(message_iid)
+    // let messageContent = document.getElementById("message-content");
+    //     messageContent.innerHTML +=
+    //     `
+    //     <h2>${packet.title}</h2>
+    //     <br>
+    //     <p>${packet.content}</p>
+        
+    //     `
+
+    
+    // let commentContent = document.getElementById("comment-content");
+
+    //     function filteredComments(message_iid) {
+    //         return commentArray.filter()
+    //     }
+    //     commentContent.innerHTML +=
+    //     `
+        
+    //     `
+}
