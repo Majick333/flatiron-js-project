@@ -19,7 +19,7 @@ function fetchComments() {
 
 function renderComments(json) {
     //debugger
-    console.log(json)
+    //console.log(json)
 
     json.forEach(comment => {
     commentArray.push(comment)}
@@ -58,12 +58,12 @@ function showComments(message_iid){
     //debugger;
     console.log(message_iid)
 
-    let result = commentArray.filter(sortComments(message_iid))
+    let result = commentArray.filter(comment => comment.message_id == message_iid)
 
     console.log(result)
 }
 
 function sortComments(message_iid) {
-    return commentArray.message_id === message_iid 
+    return message_id === message_iid 
     debugger
 }
