@@ -6,21 +6,26 @@ class Comment {
         }     
     }
 
-let commentArray = [];
+
 // //need to fetch and filter by message_id 
 // //and add below their messages
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
     .then(json => renderComments(json))
-    //commentArray.push(json)
+    debugger
 }
 
 function renderComments(json) {
-    commentArray.push(json)
-}
+    debugger
+    console.log(json)
+    let commentArray = [];
 
-console.log(commentArray)
+    json.forEach(comment => {
+    commentArray.push(comment)}
+    )};
+
+
 
 function addComment(message_iid){
     console.log("addcomment", message_iid)
@@ -51,7 +56,7 @@ function addComment(message_iid){
 //triggered by clicking view button 
 function showComments(message_iid){
     debugger;
-    console.log(message_iid)
+    //console.l og(message_iid, message_title, message_content)
     // let messageContent = document.getElementById("message-content");
     //     messageContent.innerHTML +=
     //     `

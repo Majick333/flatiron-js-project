@@ -8,6 +8,7 @@ class Message {
     }        
 }
 
+//triggers showComments
 function renderMessages(json) {
     let messageCard = document.getElementById("message-cards")
 
@@ -19,8 +20,6 @@ function renderMessages(json) {
     json.forEach(message => {
         const conversation = document.createElement('div');
         let message_iid = message.id ;
-        let messageTitle = message.title ;
-        let messageContent = message.content ;
 
         conversation.innerHTML = 
         
