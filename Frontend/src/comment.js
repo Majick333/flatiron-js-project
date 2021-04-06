@@ -6,6 +6,7 @@ class Comment {
         }     
     }
 
+    let commentArray = [];
 
 // //need to fetch and filter by message_id 
 // //and add below their messages
@@ -13,13 +14,12 @@ function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
     .then(json => renderComments(json))
-    debugger
+    //debugger
 }
 
 function renderComments(json) {
-    debugger
+    //debugger
     console.log(json)
-    let commentArray = [];
 
     json.forEach(comment => {
     commentArray.push(comment)}
@@ -55,25 +55,15 @@ function addComment(message_iid){
 
 //triggered by clicking view button 
 function showComments(message_iid){
-    debugger;
-    //console.l og(message_iid, message_title, message_content)
-    // let messageContent = document.getElementById("message-content");
-    //     messageContent.innerHTML +=
-    //     `
-    //     <h2>${packet.title}</h2>
-    //     <br>
-    //     <p>${packet.content}</p>
-        
-    //     `
+    //debugger;
+    console.log(message_iid)
 
-    
-    // let commentContent = document.getElementById("comment-content");
+    let result = commentArray.filter(sortComments(message_iid))
 
-    //     function filteredComments(message_iid) {
-    //         return commentArray.filter()
-    //     }
-    //     commentContent.innerHTML +=
-    //     `
-        
-    //     `
+    console.log(result)
+}
+
+function sortComments(message_iid) {
+    return commentArray.message_id === message_iid 
+    debugger
 }
