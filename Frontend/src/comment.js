@@ -55,12 +55,13 @@ function addComment(message_iid){
 
 //triggered by clicking view button 
 function showComments(message_iid){
-    //debugger;
     console.log(message_iid)
-
+    
+    
     let result = commentArray.filter(comment => comment.message_id == message_iid)
 
-    console.log(result)
+    console.log("showComments", result)
+    debugger
 }
 
 function sortComments(message_iid) {
