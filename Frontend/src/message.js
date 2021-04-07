@@ -1,12 +1,13 @@
 class Message {
-    constructor(username, category, title, content){
-        this.username = username; 
+    constructor(username, category, title, content) {
+        this.username = username;
         this.category = category;
         this.title = title;
         this.content = content;
-        
-    }        
+
+    }
 }
+
 
 //triggers showComments
 function renderMessages(json) {
@@ -14,16 +15,16 @@ function renderMessages(json) {
 
 
     //make link to add comment to specific message
-   
+
 
     messageCard.innerHTML = '';
     json.forEach(message => {
         const conversation = document.createElement('div');
-        let message_iid = message.id ;
+        let message_iid = message.id;
 
-        conversation.innerHTML = 
-        
-        `<div class= "message-card">
+        conversation.innerHTML =
+
+            `<div class= "message-card">
         ${message.id}<br>
         ${message.title}<br>
         ${message.content}<br>
@@ -34,25 +35,29 @@ function renderMessages(json) {
         </div>
         `
 
-        
+
         messageCard.appendChild(conversation);
     })
-    
-       
-    } 
 
-//read message
-function fetchMessages(){
-    return fetch(`${BASE_URL}/messages`)
-    .then(resp => resp.json())
-    .then(json => renderMessages(json));
+
 }
 
+
+
+//read message
+function fetchMessages() {
+    return fetch(`${BASE_URL}/messages`)
+        .then(resp => resp.json())
+        .then(json => renderMessages(json));
+}
+
+
+// !PAGE SHOULD REFRESH AFTER NEW MESSAGE IS SUBMITTED
 function newMessage() {
     let messageForm = document.getElementById('message-form');
 
     messageForm.innerHTML +=
-    `
+        `
     <form>
     <strong> Post a new Message: <strong> <br>
     <label> Username <input type="text" id="username"> </label><br>
@@ -64,7 +69,7 @@ function newMessage() {
 
     `
 
-    messageForm.addEventListener('submit', function(e){
+    messageForm.addEventListener('submit', function (e) {
         e.preventDefault();
         console.log('newMessage: --Submit button pressed...');
 
@@ -73,7 +78,7 @@ function newMessage() {
         let messageCategory = document.getElementById('category').value;
         let messageTitle = document.getElementById('title').value;
         let messageContent = document.getElementById('content').value;
-        let message ={
+        let message = {
             username: messageUsername,
             category: messageCategory,
             title: messageTitle,
@@ -83,12 +88,10 @@ function newMessage() {
         fetch(`${BASE_URL}/messages`, {
             method: "POST",
             headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(message)
         })
     })
-
-
 }

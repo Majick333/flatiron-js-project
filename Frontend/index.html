@@ -15,8 +15,11 @@
     <main>
         <section class="translucent">
           <h3>Topics</h3>
+          <br>
+          
           <div class="messages">
             <div id="message-cards"></div>
+
         </section>>
 
         <section class="detailed-view">
@@ -24,23 +27,29 @@
           <div id="information-display">
 
             <div class = "message-content">
-              Title:<br>
-              By:<br>
-              Content:<br>
+              
             </div> <br>
 
-            <div class="display-comments">Commments Go Here</div>
+            <div id="display-comments"></div>
 
             <div id="controls">
-              <button id="add comment"> Reply </button>
+              <div id = "message-form"></div>
+              <button onclick = "newMessage()"> ++New Message</button>
+              <button onclick = "newReply()"> Reply </button>
             </div>
           </div>
 
 
         </section>
 
-
-
+        <div id ="modal-bg">
+          <div id="modal">
+            <h2>Reply</h2> <br>
+            <label for="username">Username::</label> <input type="text" id="username"><br>
+            <label for="Reply">Reply::</label> <input type="text" id="replyContent"><br>
+            <button>SEND...</button>
+          </div>
+        </div>
 
 <!--Background/CSS classes-->
             <div class="shape"><h1></h1></div>

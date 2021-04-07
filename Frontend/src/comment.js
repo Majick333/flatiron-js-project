@@ -6,10 +6,9 @@ class Comment {
         }     
     }
 
-    let commentArray = [];
+    
 
-// //need to fetch and filter by message_id 
-// //and add below their messages
+ //fetch and filter by message_id 
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
@@ -25,7 +24,7 @@ function renderComments(json) {
     commentArray.push(comment)}
     )};
 
-
+const commentArray = [];
 
 function addComment(message_iid){
     console.log("addcomment", message_iid)
@@ -53,18 +52,46 @@ function addComment(message_iid){
 
 }
 
-//triggered by clicking view button 
+
+// TODO::
+// ! RESULT ARRAY SHOWS UP IN DEBUGGER, 
+// ! BUT IS DELETED WHEN STACK RUNS
+// ? HOW TO STOP STACK FROM LOOPING??
+
+// * triggered by clicking view button from message menu
 function showComments(message_iid){
-    console.log(message_iid)
     
-    
+
+    // let ans = [];
+    const commentArea = document.getElementById("display-comments");
+   
+    // * filter comments by message
     let result = commentArray.filter(comment => comment.message_id == message_iid)
-
     console.log("showComments", result)
-    debugger
+    
+    // ans.push(result)
+    // console.log("ans", ans)
+    
+    
+
+    commentArea.innerHTML +=
+        `
+        ${result}
+        `
+    
+    
+    // result.forEach(comment => {
+    //     //debugger
+
+    //     commentArea.innerHTML +=
+
+    //     `<div>
+    //     ${result}
+    //     <h4> From::<strong> ${comment.username} </strong> <h4> <br>
+    //     <p> ${comment.content} </p> <br>
+    //    </div>`
+
+       
+    // })
 }
 
-function sortComments(message_iid) {
-    return message_id === message_iid 
-    debugger
-}
