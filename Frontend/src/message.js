@@ -9,7 +9,8 @@ class Message {
 }
 
 
-//triggers showComments
+//* triggers showComments with onclick
+//! RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP
 function renderMessages(json) {
     let messageCard = document.getElementById("message-cards")
 
@@ -30,7 +31,7 @@ function renderMessages(json) {
         ${message.content}<br>
             <form>
                 <strong> Reply to this Message </strong><br>
-                <button onclick = "showComments(${message_iid})"> View </button>
+                <button onclick = "showComments(${message_iid}); return false;"> View </button>
             </form>       <br>
         </div>
         `

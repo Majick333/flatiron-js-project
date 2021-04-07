@@ -67,7 +67,10 @@ function showComments(message_iid){
    
     // * filter comments by message
     let result = commentArray.filter(comment => comment.message_id == message_iid)
+
+    // ! result stringify
     console.log("showComments", result)
+    debugger
     
     // ans.push(result)
     // console.log("ans", ans)
@@ -75,10 +78,11 @@ function showComments(message_iid){
     
 
     commentArea.innerHTML +=
+        
         `
         ${result}
         `
-    
+        
     
     // result.forEach(comment => {
     //     //debugger

@@ -1,3 +1,6 @@
+
+const BASE_URL = "http://127.0.0.1:3000"
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED')
     fetchMessages();
@@ -5,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-const BASE_URL = "http://127.0.0.1:3000"
 
 
     
