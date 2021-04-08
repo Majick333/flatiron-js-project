@@ -21,7 +21,7 @@ main {
 }
 
 #comment-form {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 #message-form {
     /* visibility: hidden; */

@@ -75,7 +75,7 @@ function showComments(message_iid){
 
     replyBtn.innerHTML =
     `
-    <button onclick="addComment(${message_iid}); return false">Reply...</button>
+    <button onclick="commentForm(${message_iid}); return false">Reply...</button>
     `
 }
 

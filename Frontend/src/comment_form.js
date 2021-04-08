@@ -6,26 +6,22 @@ function commentForm(message_iid) {
     `
     <form>
         <strong> Reply to Message </strong> <br>
-        <label> Message_id:</label> <input type="text" id="replyId"> <br>
         <label> Your Name:</label><input type="text" id="replyUsername"> <br>
         <label> Reply:</label> <input type="text" id="replyContent"> <br>
-        <input type="submit" value="Send" id="replySend">
+        <input type="submit" value="Send">
     </form>
     `
-    let commentSubmit = document.getElementById('replySend');
     
     commentForm.addEventListener('submit', function(e){
          e.preventDefault();
-         
 
         let replyUsername = document.getElementById('replyUsername').value;
         let replyContent = document.getElementById('replyContent').value;
-        let replyId = document.getElementById('replyId').value;
 
         let reply ={
             username: replyUsername,
             content: replyContent,
-            message_id: replyId
+            message_id: message_iid
         }
 
         fetch(`${BASE_URL}/comments`, {
@@ -36,7 +32,10 @@ function commentForm(message_iid) {
             },
             body: JSON.stringify(reply)
             
-        })
+        }
+        
+        )
+        
         console.log("reply submitted")
     })
 }
