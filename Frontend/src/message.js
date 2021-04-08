@@ -4,19 +4,15 @@ class Message {
         this.category = category;
         this.title = title;
         this.content = content;
-
     }
 }
-
 
 //* triggers showComments with onclick
 //! RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP
 function renderMessages(json) {
     let messageCard = document.getElementById("message-cards")
 
-
-    //make link to add comment to specific message
-
+    //* make link to add comment to specific message
 
     messageCard.innerHTML = '';
     json.forEach(message => {
@@ -30,20 +26,14 @@ function renderMessages(json) {
         ${message.title}<br>
         ${message.content}<br>
             <form>
-                <strong> Reply to this Message </strong><br>
                 <button onclick = "showComments(${message_iid}); return false;"> View </button>
             </form>       <br>
         </div>
         `
 
-
         messageCard.appendChild(conversation);
     })
-
-
 }
-
-
 
 //read message
 function fetchMessages() {
@@ -51,7 +41,6 @@ function fetchMessages() {
         .then(resp => resp.json())
         .then(json => renderMessages(json));
 }
-
 
 // !PAGE SHOULD REFRESH AFTER NEW MESSAGE IS SUBMITTED
 function newMessage() {

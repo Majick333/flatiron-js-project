@@ -6,19 +6,13 @@ class Comment {
         }     
     }
 
-    
-
- //fetch and filter by message_id 
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
     .then(json => renderComments(json))
-    //debugger
 }
 
 function renderComments(json) {
-    //debugger
-    //console.log(json)
 
     json.forEach(comment => {
     commentArray.push(comment)}
@@ -52,50 +46,39 @@ function addComment(message_iid){
 
 }
 
-
-// TODO::
-// ! RESULT ARRAY SHOWS UP IN DEBUGGER, 
-// ! BUT IS DELETED WHEN STACK RUNS
-// ? HOW TO STOP STACK FROM LOOPING??
-
 // * triggered by clicking view button from message menu
 function showComments(message_iid){
-    
-
-    // let ans = [];
+    const replyBtn = document.getElementById("reply-btn");
     const commentArea = document.getElementById("display-comments");
-   
+    
     // * filter comments by message
     let result = commentArray.filter(comment => comment.message_id == message_iid)
+    
 
     // ! result stringify
     console.log("showComments", result)
-    debugger
-    
-    // ans.push(result)
-    // console.log("ans", ans)
-    
-    
 
-    commentArea.innerHTML +=
-        
+    commentArea.innerHTML = '';
+
+    result.forEach(comment => {
+        const reply = document.createElement('div');
+
+        reply.innerHTML =
         `
-        ${result}
+        ${comment.username}<br>
+        ${comment.content}<br>
         `
-        
-    
-    // result.forEach(comment => {
-    //     //debugger
 
-    //     commentArea.innerHTML +=
+        commentArea.appendChild(reply);
+    }
+    )
 
-    //     `<div>
-    //     ${result}
-    //     <h4> From::<strong> ${comment.username} </strong> <h4> <br>
-    //     <p> ${comment.content} </p> <br>
-    //    </div>`
-
-       
-    // })
+    replyBtn.innerHTML =
+    `
+    <button onclick="addComment(${message_iid}); return false">Reply...</button>
+    `
 }
 
+function testFunction() {
+    alert("Mic Check, 123")
+}
