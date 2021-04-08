@@ -106,8 +106,26 @@ main {
     display: flex;
     flex: 3;
     width: 60%;
-    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0,255,106, 0.1));
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.7), rgba(0,255,106, 0.1));
     min-height: 60%;    
+}
+
+#display-comments {
+    display: flex;
+    width: 66%;
+    height: 33%;
+    background: linear-gradient(to right top, rgba(132, 215, 248, 0.3), rgba(31, 238, 245, 0.1));
+}
+
+.reply {
+    flex: 2;
+    background: linear-gradient(to left bottom, rgba(35, 243, 233, 0.3), rgba(245, 204, 115, 0.9));
+    padding: 3%;
+    border: 1px solid rgb(5, 239, 247);
+    border-width: 3px;
+    border-radius: 1rem;
+    justify-content: space-around;
+    width: 85%;
 }
 
 .detailed-view {
@@ -193,10 +211,5 @@ main {
     padding: 0rem 2rem;    
 }
 
-.links {
-    flex: 1;
-    padding: 0rem 2rem;
-    color: rgb(37, 71, 82);
-    font-weight: 650;
-    
-}
+
+

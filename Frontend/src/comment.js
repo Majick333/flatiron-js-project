@@ -62,6 +62,7 @@ function showComments(message_iid){
 
     result.forEach(comment => {
         const reply = document.createElement('div');
+        reply.className = "reply";
 
         reply.innerHTML =
         `
