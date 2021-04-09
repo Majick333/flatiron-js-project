@@ -80,6 +80,4 @@ function showComments(message_iid){
     `
 }
 
-function testFunction() {
-    alert("Mic Check, 123")
-}
+

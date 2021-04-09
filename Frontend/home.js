@@ -5,16 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED')
     fetchMessages();
     fetchComments();
+    shredderSearch();
 })
 
 
+function testFunction() {
+    alert("Mic Check, 123")
+}
 
-
-    
-function newReply() {
-    debugger;
-    let modalBg = document.getElementsByClassName("modal-bg");
-    modalBg.classList.add('modal-active');
-
-    
+function closeMessage(){
+    let messageForm = document.getElementById('message-form');
+    messageForm.innerHTML = ``;
 }

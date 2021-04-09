@@ -1,14 +1,16 @@
 
 function commentForm(message_iid) {
-    let commentForm = document.getElementById('comment-form');
+
+    const commentForm = document.getElementById('comment-form');
 
     commentForm.innerHTML +=
     `
     <form>
         <strong> Reply to Message </strong> <br>
-        <label> Your Name:</label><input type="text" id="replyUsername"> <br>
+        <label> Your Name:</label><input type="text" id="replyUsername" placeHolder ="Anonymous"> <br>
         <label> Reply:</label> <input type="text" id="replyContent"> <br>
         <input type="submit" value="Send">
+        <button onclick="closeComment(); return false;">Close</button
     </form>
     `
     
@@ -16,6 +18,8 @@ function commentForm(message_iid) {
          e.preventDefault();
 
         let replyUsername = document.getElementById('replyUsername').value;
+        replyUsername.defaultValue = "Anonymous";
+
         let replyContent = document.getElementById('replyContent').value;
 
         let reply ={
@@ -36,6 +40,14 @@ function commentForm(message_iid) {
         
         )
         
-        console.log("reply submitted")
+        console.log("reply submitted");
+        //window.location.reload();
+        fetchComments();
+        showComments(message_iid);
     })
+}
+
+function closeComment() {
+    const commentForm = document.getElementById('comment-form');
+    commentForm.innerHTML = ``
 }

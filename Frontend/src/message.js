@@ -8,7 +8,7 @@ class Message {
 }
 
 //* triggers showComments with onclick
-//! RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP
+//! RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP; INLINE FOR PREVENTDEFAULT()
 function renderMessages(json) {
     let messageCard = document.getElementById("message-cards")
 
@@ -55,6 +55,7 @@ function newMessage() {
     <label> Title <input type="text" id="title"> </label><br>
     <label> Your Message <input type="text" id="content"> </label><br> <br>
     <input type="submit" value="Post">
+    <button onclick="closeMessage(); return false;">Close</button
     </form>
 
     `
@@ -65,6 +66,8 @@ function newMessage() {
 
 
         let messageUsername = document.getElementById('username').value;
+        messageUsername.defaultValue = "Anonymous";
+        
         let messageCategory = document.getElementById('category').value;
         let messageTitle = document.getElementById('title').value;
         let messageContent = document.getElementById('content').value;

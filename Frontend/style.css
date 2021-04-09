@@ -113,19 +113,27 @@ main {
 #display-comments {
     display: flex;
     width: 66%;
-    height: 33%;
+    height: 100%;
     background: linear-gradient(to right top, rgba(132, 215, 248, 0.3), rgba(31, 238, 245, 0.1));
+    overflow: scroll;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .reply {
-    flex: 2;
-    background: linear-gradient(to left bottom, rgba(35, 243, 233, 0.3), rgba(245, 204, 115, 0.9));
-    padding: 3%;
+    display: inline-flexbox;
+    flex-direction: row;
+    flex-basis: 20%;
+    background: linear-gradient(to left bottom, rgba(71, 71, 68, 0.3), rgb(245, 244, 242));
+    padding: 5%;
     border: 1px solid rgb(5, 239, 247);
     border-width: 3px;
     border-radius: 1rem;
     justify-content: space-around;
-    width: 85%;
+    width: 90%;
+    min-height: 25%;
+    overflow: scroll;
 }
 
 .detailed-view {
@@ -133,10 +141,11 @@ main {
     width: 60%;
     display: flex;
     background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0,255,106, 0.1));
-    min-height: 60%;  
+    height: 60%;  
     border: 1px solid black; 
     border-radius: 2rem;
     padding: 3%;
+    overflow: scroll;
 }
 
 .shape,
@@ -202,7 +211,6 @@ main {
     padding: 0rem 2rem;
 }
 
-
 .cards {
     flex: 2;
     flex-direction: row;
@@ -210,6 +218,3 @@ main {
     justify-content: center;
     padding: 0rem 2rem;    
 }
-
-
-
