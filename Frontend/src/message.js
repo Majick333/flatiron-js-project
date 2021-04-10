@@ -27,6 +27,7 @@ function renderMessages(json) {
         ${message.content}<br>
             <form>
                 <button onclick = "showComments(${message_iid}); return false;"> View </button>
+                <button onclick = "deleteMessage(${message_iid}); return false;"> Delete </button>
             </form>       <br>
         </div>
         `
@@ -88,3 +89,14 @@ function newMessage() {
         })
     })
 }
+
+function deleteMessage(message_iid) {
+    let message_id = message_iid;
+    return fetch(`${BASE_URL}/messages/${message_id}`,{
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    }

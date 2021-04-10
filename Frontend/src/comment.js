@@ -54,8 +54,6 @@ function showComments(message_iid){
     // * filter comments by message
     let result = commentArray.filter(comment => comment.message_id == message_iid)
     
-
-    // ! result stringify
     console.log("showComments", result)
 
     commentArea.innerHTML = '';
@@ -66,7 +64,8 @@ function showComments(message_iid){
 
         reply.innerHTML =
         `
-        ${comment.username}<br>
+      <strong><em> FROM </em></strong>
+        ${comment.username}<br><br>
         ${comment.content}<br>
         `
 
