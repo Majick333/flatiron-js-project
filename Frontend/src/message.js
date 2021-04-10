@@ -99,4 +99,4 @@ function deleteMessage(message_iid) {
             'Content-Type': 'application/json'
         }
     })
-    }
+}

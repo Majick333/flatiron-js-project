@@ -51,6 +51,7 @@ function showComments(message_iid){
     const replyBtn = document.getElementById("reply-btn");
     const commentArea = document.getElementById("display-comments");
     
+
     // * filter comments by message
     let result = commentArray.filter(comment => comment.message_id == message_iid)
     
@@ -59,14 +60,20 @@ function showComments(message_iid){
     commentArea.innerHTML = '';
 
     result.forEach(comment => {
+        let comment_iid = comment.id;
+        console.log(comment_iid);
         const reply = document.createElement('div');
         reply.className = "reply";
-
+        
         reply.innerHTML =
         `
-      <strong><em> FROM </em></strong>
-        ${comment.username}<br><br>
-        ${comment.content}<br>
+        <form>
+        ${comment_iid}<br>
+        <strong><em> FROM </em></strong>   
+            ${comment.username}<br><br>
+            ${comment.content}<br>
+        <button onclick = "deleteComment(${comment_iid}); return false;"> Delete </button>
+        </form>
         `
 
         commentArea.appendChild(reply);
@@ -79,4 +86,13 @@ function showComments(message_iid){
     `
 }
 
-
+function deleteComment(comment_iid){
+     console.log(comment_iid)
+    return fetch(`${BASE_URL}/comments/${comment_iid}`, {
+        method: `DELETE`,   
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+}
