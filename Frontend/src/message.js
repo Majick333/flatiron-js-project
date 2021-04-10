@@ -22,7 +22,6 @@ function renderMessages(json) {
         conversation.innerHTML =
 
             `<div class= "message-card">
-        ${message.id}<br>
         ${message.title}<br>
         ${message.content}<br>
             <form>

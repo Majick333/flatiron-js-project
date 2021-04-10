@@ -68,7 +68,6 @@ function showComments(message_iid){
         reply.innerHTML =
         `
         <form>
-        ${comment_iid}<br>
         <strong><em> FROM </em></strong>   
             ${comment.username}<br><br>
             ${comment.content}<br>
