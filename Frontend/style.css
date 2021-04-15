@@ -13,7 +13,7 @@ header {
 main {
     box-sizing: content-box;
     height: 100vh;
-    background: linear-gradient(to right top, rgb(61, 77, 80), rgb(46, 134, 161));
+    background: linear-gradient(to right bottom, rgb(90, 140, 155), rgb(28, 30, 31) );
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -130,8 +130,8 @@ main {
     flex-direction: row;
     flex-basis: 20%;
     background: linear-gradient(to left bottom, rgba(71, 71, 68, 0.3), rgb(245, 244, 242));
-    padding: 5%;
-    border: 1px solid rgb(5, 239, 247);
+    padding: 2%;
+    border: 1px solid rgb(120, 249, 253);
     border-width: 3px;
     border-radius: 1rem;
     justify-content: space-around;
