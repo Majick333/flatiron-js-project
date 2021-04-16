@@ -13,7 +13,7 @@ header {
 main {
     box-sizing: content-box;
     height: 100vh;
-    background: linear-gradient(to right bottom, rgb(90, 140, 155), rgb(28, 30, 31) );
+    background: linear-gradient(to right bottom, rgb(90, 140, 155), rgb(28, 30, 31));
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -23,6 +23,7 @@ main {
 #comment-form {
     /* visibility: hidden; */
 }
+
 #message-form {
     /* visibility: hidden; */
 
@@ -34,17 +35,17 @@ main {
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0,5s;
+    transition: visibility 0s, opacity 0, 5s;
 }
 
-#modal-active{
+#modal-active {
     visibility: visible;
     opacity: 1;
 }
@@ -87,9 +88,8 @@ main {
     z-index: 4;
 }
 
-#message-content{
-    
-}
+#message-content {}
+
 .translucent {
     display: flex;
     flex: 1;
@@ -109,8 +109,8 @@ main {
     display: flex;
     flex: 3;
     width: 60%;
-    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.7), rgba(0,255,106, 0.1));
-    min-height: 60%;    
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.7), rgba(0, 255, 106, 0.1));
+    min-height: 60%;
 }
 
 #display-comments {
@@ -122,7 +122,7 @@ main {
     overflow: scroll;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
 
 .reply {
@@ -144,9 +144,9 @@ main {
     z-index: 3;
     width: 60%;
     display: flex;
-    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0,255,106, 0.1));
-    height: 60%;  
-    border: 1px solid black; 
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0, 255, 106, 0.1));
+    height: 60%;
+    border: 1px solid black;
     border-radius: 2rem;
     padding: 3%;
     overflow: scroll;
@@ -160,7 +160,7 @@ main {
     border-radius: 1rem;
     border-radius: 50%;
     backdrop-filter: blur(5rem);
-   
+
 
 }
 
@@ -169,12 +169,12 @@ main {
     width: 25rem;
     position: absolute;
     top: 7%;
-    left: 0%; 
+    left: 0%;
     z-index: 2;
     text-align: center;
     text-decoration-color: blueviolet;
     font-style: italic;
-   
+
 }
 
 .shape2 {
@@ -201,7 +201,7 @@ main {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
     min-height: 65vh;
     border-radius: 1rem;
-    
+
 }
 
 .messages {
@@ -220,5 +220,5 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0rem 2rem;    
+    padding: 0rem 2rem;
 }

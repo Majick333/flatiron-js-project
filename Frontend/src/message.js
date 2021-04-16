@@ -67,7 +67,7 @@ function newMessage() {
 
         let messageUsername = document.getElementById('username').value;
         messageUsername.defaultValue = "Anonymous";
-        
+
         let messageCategory = document.getElementById('category').value;
         let messageTitle = document.getElementById('title').value;
         let messageContent = document.getElementById('content').value;
@@ -91,7 +91,7 @@ function newMessage() {
 
 function deleteMessage(message_iid) {
     let message_id = message_iid;
-    return fetch(`${BASE_URL}/messages/${message_id}`,{
+    return fetch(`${BASE_URL}/messages/${message_id}`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',
