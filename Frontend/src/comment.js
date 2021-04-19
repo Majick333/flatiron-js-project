@@ -21,44 +21,44 @@ function renderComments(json) {
 
 const commentArray = [];
 
-function addComment(message_iid) {
-    console.log("addcomment", message_iid)
-    //alert('like this')
-    //debugger;
-    let commentUsername = document.getElementById('comment-username').value
-    let commentContent = document.getElementById('reply').value
+// function addComment(message_iid) {
+//     console.log("addcomment", message_iid)
+//     //alert('like this')
+//     //debugger;
+//     let commentUsername = document.getElementById('comment-username').value
+//     let commentContent = document.getElementById('reply').value
 
-    let comment = {
-        message_id: message_iid,
-        username: commentUsername,
-        content: commentContent
-    }
+//     let comment = {
+//         message_id: message_iid,
+//         username: commentUsername,
+//         content: commentContent
+//     }
 
-    fetch(`${BASE_URL}/comments`, {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(comment)
-    })
+//     fetch(`${BASE_URL}/comments`, {
+//         method: "POST",
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(comment)
+//     })
 
-    window.alert("Your Comment has been posted")
+//     window.alert("Your Comment has been posted")
+// }
 
-}
+
 
 // * triggered by clicking view button from message menu
+
+
 function showComments(message_iid) {
-    const replyBtn = document.getElementById("reply-btn");
-    const commentArea = document.getElementById("display-comments");
+    
     
     //! SET MESSAGE-ID TO BE RECALLED AFTER PAGE REFRESH
     let newVal = message_iid.toString()
-    localStorage.setItem('message_id', newVal)
-    let refreshVal = localStorage.getItem('message_id')
-    console.log('val', refreshVal)
+    localStorage.setItem('message_id', newVal)  
+    console.log('val', newVal)
     //!
-
 
 
     // * filter comments by message
@@ -70,7 +70,6 @@ function showComments(message_iid) {
 
     result.forEach(comment => {
         let comment_iid = comment.id;
-        console.log(comment_iid);
         const reply = document.createElement('div');
         reply.className = "reply";
 

@@ -34,16 +34,11 @@ function commentForm(message_iid) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(reply)
-
-            }
-
-        )
-
-        console.log("reply submitted", message_iid);
-        //window.location.reload();
-        //testFunction();
-        refreshComments(message_iid);
+            })
+           
     })
+    
+
 }
 
 function closeComment() {
