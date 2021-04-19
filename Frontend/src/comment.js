@@ -51,6 +51,14 @@ function addComment(message_iid) {
 function showComments(message_iid) {
     const replyBtn = document.getElementById("reply-btn");
     const commentArea = document.getElementById("display-comments");
+    
+    //! SET MESSAGE-ID TO BE RECALLED AFTER PAGE REFRESH
+    let newVal = message_iid.toString()
+    localStorage.setItem('message_id', newVal)
+    let refreshVal = localStorage.getItem('message_id')
+    console.log('val', refreshVal)
+    //!
+
 
 
     // * filter comments by message

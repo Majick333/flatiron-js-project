@@ -39,10 +39,10 @@ function commentForm(message_iid) {
 
         )
 
-        console.log("reply submitted");
+        console.log("reply submitted", message_iid);
         //window.location.reload();
-        fetchComments();
-        showComments(message_iid);
+        //testFunction();
+        refreshComments(message_iid);
     })
 }
 
