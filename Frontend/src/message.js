@@ -99,3 +99,9 @@ function deleteMessage(message_iid) {
         }
     })
 }
+
+function closeMessage() {
+    let messageForm = document.getElementById('message-form');
+    messageForm.innerHTML = ``;
+}
+

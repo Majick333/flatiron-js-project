@@ -6,10 +6,13 @@ class Comment {
     }
 }
 
+let message_iid = localStorage.getItem('message_id')  
+
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
         .then(resp => resp.json())
         .then(json => renderComments(json))
+        .then(setTimeout(function() { showComments(recall_id);}, 1000));
 }
 
 function renderComments(json) {
@@ -19,7 +22,6 @@ function renderComments(json) {
     })
 };
 
-const commentArray = [];
 
 // function addComment(message_iid) {
 //     console.log("addcomment", message_iid)

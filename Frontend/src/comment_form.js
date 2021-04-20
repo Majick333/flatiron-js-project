@@ -34,7 +34,7 @@ function commentForm(message_iid) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(reply)
-            })
+            }).then(window.location.reload())
            
     })
     
