@@ -8,7 +8,7 @@ class Message {
 }
 
 //* triggers showComments with onclick
-//! RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP; INLINE FOR PREVENTDEFAULT()
+//* RETURN FALSE AFTER ONCLICK TO STOP REFRESH LOOP; INLINE FOR PREVENTDEFAULT()
 function renderMessages(json) {
     let messageCard = document.getElementById("message-cards")
 
@@ -42,7 +42,6 @@ function fetchMessages() {
         .then(json => renderMessages(json));
 }
 
-// !PAGE SHOULD REFRESH AFTER NEW MESSAGE IS SUBMITTED
 function newMessage() {
     let messageForm = document.getElementById('message-form');
 
@@ -98,7 +97,7 @@ function deleteMessage(message_iid) {
             'Content-Type': 'application/json'
         }
     }).then(setTimeout(() => {
-        window.location.reload()}, 2000))
+        window.location.reload()}, 1000))
 }
 
 function closeMessage() {

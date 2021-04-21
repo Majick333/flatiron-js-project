@@ -26,13 +26,12 @@ function buildCommentArray(json) {
 
 // * triggered by clicking view button from message menu
 function showComments(message_iid) {
-
-
     //! SET MESSAGE-ID TO BE RECALLED AFTER PAGE REFRESH
+    
     let newVal = message_iid.toString()
     localStorage.setItem('message_id', newVal)
     console.log('val', newVal)
-    //!
+    
 
 
     // * filter comments by message
