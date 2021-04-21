@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED', recall_id)
     fetchMessages();
     fetchComments();
+    showComments(recall_id);
 })
 
 function testFunction() {

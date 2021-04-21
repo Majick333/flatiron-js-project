@@ -74,5 +74,6 @@ function deleteComment(comment_iid) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-    })
+    }).then(setTimeout(() => {
+        window.location.reload()}, 1000))
 }
