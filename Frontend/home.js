@@ -10,16 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('DOM LOADED', recall_id)
     fetchMessages();
     fetchComments();
-    showComments(recall_id);
 })
 
 function testFunction() {
     alert("Mic Check, 123")
-}
-
-
-
-function recallComments(recall_id) {
-    let message_iid = recall_id
-    showComments(message_iid)
 }

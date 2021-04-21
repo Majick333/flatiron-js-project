@@ -6,59 +6,31 @@ class Comment {
     }
 }
 
-let message_iid = localStorage.getItem('message_id')  
+let message_iid = localStorage.getItem('message_id')
 
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
         .then(resp => resp.json())
-        .then(json => renderComments(json))
-        .then(setTimeout(function() { showComments(recall_id);}, 1000));
+        .then(json => buildCommentArray(json))
+        .then(setTimeout(() => {
+            showComments(recall_id);
+        }, 1000));
 }
 
-function renderComments(json) {
+function buildCommentArray(json) {
 
     json.forEach(comment => {
         commentArray.push(comment)
     })
 };
 
-
-// function addComment(message_iid) {
-//     console.log("addcomment", message_iid)
-//     //alert('like this')
-//     //debugger;
-//     let commentUsername = document.getElementById('comment-username').value
-//     let commentContent = document.getElementById('reply').value
-
-//     let comment = {
-//         message_id: message_iid,
-//         username: commentUsername,
-//         content: commentContent
-//     }
-
-//     fetch(`${BASE_URL}/comments`, {
-//         method: "POST",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(comment)
-//     })
-
-//     window.alert("Your Comment has been posted")
-// }
-
-
-
 // * triggered by clicking view button from message menu
-
-
 function showComments(message_iid) {
-    
-    
+
+
     //! SET MESSAGE-ID TO BE RECALLED AFTER PAGE REFRESH
     let newVal = message_iid.toString()
-    localStorage.setItem('message_id', newVal)  
+    localStorage.setItem('message_id', newVal)
     console.log('val', newVal)
     //!
 
