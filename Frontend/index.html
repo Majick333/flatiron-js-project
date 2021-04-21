@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Abstract Space</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header>
+    <h2>Abstract Space</h2>
+  </header>
+
+  <main>
+    <section class="translucent">
+      <h3>Topics</h3>
+      <br>
+
+      <div class="messages">
+        <div id="message-cards"></div>
+
+    </section>>
+
+    <section class="detailed-view">
+
+      <div id="information-display">
+
+        <div class="message-content">
+
+        </div> <br>
+
+        <div id="display-comments"></div>
+
+        <div id="controls">
+          <div id="comment-form"></div>
+          <div id="message-form"></div>
+          <button onclick="newMessage()"> ++New Message</button>
+          <div id="reply-btn"></div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <div id="modal-bg">
+      <div id="modal">
+        <h2>Reply</h2> <br>
+        <label for="username">Username::</label> <input type="text" id="username"><br>
+        <label for="Reply">Reply::</label> <input type="text" id="replyContent"><br>
+        <button>SEND...</button>
+      </div>
+    </div>
+
+    <!--Background/CSS classes-->
+    <div class="shape">
+      <h1></h1>
+    </div>
+    <div class="shape2">
+      <h1></h1>
+    </div>
+    <div class="shape3">
+      <h1></h1>
+    </div>
+  </main>
+
+</body>
+
+<script type="text/javascript" src="src/message.js"> </script>
+<script type="text/javascript" src="src/comment.js"> </script>
+<script type="text/javascript" src="src/comment_form.js"> </script>
+<script type="text/javascript" src="src/reload.js"> </script>
+<script type="text/javascript" src="./home.js"> </script>
+
+</html>

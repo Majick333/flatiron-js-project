@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../Code/Labs2020/js-rails-as-api-pokemon-teams-project-online-web-sp-000"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "flatiron-js-project"
+	}
+}

@@ -11,25 +11,58 @@ header {
 }
 
 main {
-    min-height: 100vh;
-    background: linear-gradient(to right top, rgb(43, 128, 101), rgb(59, 255, 164));
+    box-sizing: content-box;
+    height: 100vh;
+    background: linear-gradient(to right bottom, rgb(90, 140, 155), rgb(28, 30, 31));
     display: flex;
     align-items: center;
     justify-content: space-around;
     backdrop-filter: blur(1rem);
-    overflow: scroll;
 }
 
 #comment-form {
     /* visibility: hidden; */
 }
+
 #message-form {
     /* visibility: hidden; */
 
 }
 
+#modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0, 5s;
+}
+
+#modal-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#modal {
+    background-color: white;
+    width: 33%;
+    height: 33%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 .comments {
-    flex: 3;
+    /* box-sizing: content-box; */
+    flex: 2;
     background: linear-gradient(to right bottom, rgba(252, 255, 253, 0.6), rgba(143, 227, 241, 0.1));
     align-items: center;
     min-height: 55vh;
@@ -41,30 +74,82 @@ main {
     z-index: 6;
 }
 
-.messages {
-    min-height: 40vh;
-    flex: 2;
+.message-cards {
+    display: flex;
+    flex: 1;
+    height: 40%vh;
+    width: 40%;
+    flex: 2 0 0;
     background: linear-gradient(to right bottom, rgba(252, 255, 253, 0.6), rgba(143, 227, 241, 0.1));
     align-items: center;
     min-height: 55vh;
     border-radius: 2rem;
     padding: 0rem 2rem;
     z-index: 4;
-    -ms-flex-align: end;
 }
 
+#message-content {}
+
 .translucent {
-    background: white;
-    min-height: 60vh;
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right bottom, rgba(0, 255, 106, 0.6), rgba(255, 255, 255, 0.1));
+    flex: 1;
+    background: white;
+    height: 70%;
+    width: 30%;
+    background: linear-gradient(to right bottom, rgba(21, 156, 163, 0.6), rgba(216, 221, 221, 0.1));
     border-radius: 3rem;
     z-index: 3;
     backdrop-filter: blur(1rem);
+    padding: 3%;
+}
+
+#information-display {
+    border-radius: 2rem;
+    padding: 1%;
+    display: flex;
+    flex: 3;
+    width: 60%;
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.7), rgba(0, 255, 106, 0.1));
+    min-height: 60%;
+}
+
+#display-comments {
+    border-radius: 1rem;
+    display: flex;
+    width: 66%;
+    height: 100%;
+    background: linear-gradient(to right top, rgba(132, 215, 248, 0.3), rgba(31, 238, 245, 0.1));
+    overflow: scroll;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.reply {
+    display: inline-flexbox;
     flex-direction: row;
+    flex-basis: 20%;
+    background: linear-gradient(to left bottom, rgba(71, 71, 68, 0.3), rgb(245, 244, 242));
+    padding: 2%;
+    border: 1px solid rgb(120, 249, 253);
+    border-width: 3px;
+    border-radius: 1rem;
+    justify-content: space-around;
+    width: 90%;
+    min-height: 25%;
+    overflow: scroll;
+}
+
+.detailed-view {
+    z-index: 3;
+    width: 60%;
+    display: flex;
+    background: linear-gradient(to right bottom, rgba(132, 215, 248, 0.5), rgba(0, 255, 106, 0.1));
+    height: 60%;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 3%;
+    overflow: scroll;
 }
 
 .shape,
@@ -75,7 +160,7 @@ main {
     border-radius: 1rem;
     border-radius: 50%;
     backdrop-filter: blur(5rem);
-   
+
 
 }
 
@@ -84,17 +169,17 @@ main {
     width: 25rem;
     position: absolute;
     top: 7%;
-    left: 0%; 
+    left: 0%;
     z-index: 2;
     text-align: center;
     text-decoration-color: blueviolet;
     font-style: italic;
-   
+
 }
 
 .shape2 {
-    height: 40rem;
-    width: 50rem;
+    height: 30rem;
+    width: 30rem;
     position: absolute;
     top: 20%;
     left: 30%;
@@ -102,11 +187,11 @@ main {
 }
 
 .shape3 {
-    height: 40rem;
-    width: 40rem;
+    height: 24rem;
+    width: 24rem;
     position: absolute;
-    top: 60%;
-    left: 60%;
+    top: 50%;
+    left: 50%;
     z-index: 2;
 
 }
@@ -116,31 +201,24 @@ main {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
     min-height: 65vh;
     border-radius: 1rem;
-    
+
 }
 
 .messages {
-    flex: 3;
+    padding: 2%;
+    display: flex;
+    flex: 1;
+    flex-basis: 20%;
     background: linear-gradient(to right bottom, rgba(252, 255, 253, 0.6), rgba(143, 227, 241, 0.1));
-    align-items: center;
     min-height: 55vh;
     border-radius: 2rem;
     padding: 0rem 2rem;
 }
-
 
 .cards {
     flex: 2;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0rem 2rem;    
-}
-
-.links {
-    flex: 1;
     padding: 0rem 2rem;
-    color: rgb(37, 71, 82);
-    font-weight: 650;
-    
 }

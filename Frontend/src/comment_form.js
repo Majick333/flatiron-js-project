@@ -1,42 +1,47 @@
-
 function commentForm(message_iid) {
-    let commentForm = document.getElementById('comment-form');
+
+    const commentForm = document.getElementById('comment-form');
 
     commentForm.innerHTML +=
-    `
+        `
     <form>
         <strong> Reply to Message </strong> <br>
-        <label> Message_id:</label> <input type="text" id="replyId"> <br>
-        <label> Your Name:</label><input type="text" id="replyUsername"> <br>
+        <label> Your Name:</label><input type="text" id="replyUsername" placeHolder ="Anonymous"> <br>
         <label> Reply:</label> <input type="text" id="replyContent"> <br>
-        <input type="submit" value="Send" id="replySend">
+        <input type="submit" value="Send">
+        <button onclick="closeComment(); return false;">Close</button
     </form>
     `
-    let commentSubmit = document.getElementById('replySend');
-    
-    commentForm.addEventListener('submit', function(e){
-         e.preventDefault();
-         
+
+    commentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
         let replyUsername = document.getElementById('replyUsername').value;
-        let replyContent = document.getElementById('replyContent').value;
-        let replyId = document.getElementById('replyId').value;
+        replyUsername.defaultValue = "Anonymous";
 
-        let reply ={
+        let replyContent = document.getElementById('replyContent').value;
+
+        let reply = {
             username: replyUsername,
             content: replyContent,
-            message_id: replyId
+            message_id: message_iid
         }
 
         fetch(`${BASE_URL}/comments`, {
-            method: "POST",
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(reply)
-            
-        })
-        console.log("reply submitted")
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(reply)
+            }).then(window.location.reload())
+           
     })
+    
+
+}
+
+function closeComment() {
+    const commentForm = document.getElementById('comment-form');
+    commentForm.innerHTML = ``
 }
