@@ -16,10 +16,3 @@ document.addEventListener("DOMContentLoaded", () => {
 function testFunction() {
     alert("Mic Check, 123")
 }
-
-
-
-function recallComments(recall_id) {
-    let message_iid = recall_id
-    showComments(message_iid)
-}
