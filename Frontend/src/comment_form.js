@@ -39,7 +39,7 @@ function commentForm(message_iid) {
                 let comment_iid = data.id;
                 const reply = document.createElement('div');
                 reply.className = "reply";
-        
+
                 reply.innerHTML =
                     `
             
@@ -50,11 +50,14 @@ function commentForm(message_iid) {
                 <button onclick = "deleteComment(${comment_iid}); return false;"> Delete </button>
                 </form>
                 `
-                commentArea.insertAdjacentElement("beforeend",reply)
+                commentArea.insertAdjacentElement("beforeend", reply);
+                commentArray.push(data);
+                console.log("new post made", commentArray);
+                closeComment();
             })
-           
+
     })
-    
+
 
 }
 

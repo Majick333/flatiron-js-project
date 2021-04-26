@@ -79,14 +79,14 @@ function newMessage() {
         }
 
         fetch(`${BASE_URL}/messages`, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(message)
-        }).then(res => res.json())
-        .then(data => console.log(data))
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(message)
+            }).then(res => res.json())
+            .then(data => console.log(data))
     })
 }
 
@@ -99,7 +99,8 @@ function deleteMessage(message_iid) {
             'Content-Type': 'application/json'
         }
     }).then(setTimeout(() => {
-        window.location.reload()}, 2000))
+        window.location.reload()
+    }, 2000))
 }
 
 function closeMessage() {
