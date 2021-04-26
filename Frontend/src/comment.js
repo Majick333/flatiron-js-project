@@ -8,13 +8,23 @@ class Comment {
 
 let message_iid = localStorage.getItem('message_id')
 
+// function fetchComments() {
+//     fetch(`${BASE_URL}/comments`)
+//         .then(resp => resp.json())
+//         .then(json => buildCommentArray(json))
+//         .then(setTimeout(() => {
+//             showComments(recall_id);
+//         }, 1000));
+// }
+
 function fetchComments() {
     fetch(`${BASE_URL}/comments`)
         .then(resp => resp.json())
-        .then(json => buildCommentArray(json))
-        .then(setTimeout(() => {
-            showComments(recall_id);
-        }, 1000));
+        .then(json => {
+            // console.log("test1",json)
+            buildCommentArray(json)
+        })
+
 }
 
 function buildCommentArray(json) {

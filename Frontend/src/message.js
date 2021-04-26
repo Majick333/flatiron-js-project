@@ -85,7 +85,8 @@ function newMessage() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(message)
-        })
+        }).then(res => res.json())
+        .then(data => console.log(data))
     })
 }
 
@@ -106,3 +107,6 @@ function closeMessage() {
     messageForm.innerHTML = ``;
 }
 
+// add eventlistener
+// update DOM after
+// 

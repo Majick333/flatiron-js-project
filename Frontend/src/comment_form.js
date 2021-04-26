@@ -34,8 +34,24 @@ function commentForm(message_iid) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(reply)
-            }).then(setTimeout(() => {
-                window.location.reload()}, 2000))
+            }).then(res => res.json())
+            .then(data => {
+                let comment_iid = data.id;
+                const reply = document.createElement('div');
+                reply.className = "reply";
+        
+                reply.innerHTML =
+                    `
+            
+                <form>
+                <strong><em> FROM </em></strong>   
+                    ${data.username}<br><br>
+                    ${data.content}<br>
+                <button onclick = "deleteComment(${comment_iid}); return false;"> Delete </button>
+                </form>
+                `
+                commentArea.insertAdjacentElement("beforeend",reply)
+            })
            
     })
     
